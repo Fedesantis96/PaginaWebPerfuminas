@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>El Ángel Azul - Perfuminas y Velas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('logo.jpg');
+            /* tu logo como fondo */
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            background-size: 300px;
+            /* ajusta el tamaño del logo */
+            text-align: center;
+            /* centra todo el contenido */
+            margin: 0;
+            padding: 0;
+        }
+        
+        header h1 {
+            color: darkblue;
+            margin-top: 20px;
+        }
+        
+        header h2 {
+            color: #444;
+        }
+        
+        .productos {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            /* por si se achica la pantalla */
+        }
+        
+        .producto {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.8);
+            /* hace que se vea bien sobre el logo */
+            width: 200px;
+        }
+        
+        .producto img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        
+        footer {
+            margin-top: 50px;
+            font-size: 14px;
+            color: #555;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>✨ El Ángel Azul ✨</h1>
+        <h2>Perfuminas y Velas Artesanales</h2>
+    </header>
+
+    <main>
+        <section class="productos">
+            <div class="producto">
+                <img src="velas.jpg" alt="Velas aromáticas">
+                <p>Vela Aromática</p>
+            </div>
+            <div class="producto">
+                <img src="perfuminas.jpg" alt="Perfuminas">
+                <p>Perfumina para ambientes</p>
+            </div>
+            <div class="producto">
+                <img src="vela2.jpg" alt="Vela personalizada">
+                <p>Vela Personalizada</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 El Ángel Azul - Emprendimiento Familiar</p>
+    </footer>
+</body>
+
+</html>
