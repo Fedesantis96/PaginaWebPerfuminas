@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito - El Ángel Azul</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- SÓCALO SUPERIOR -->
+    <header>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="logo.jpg" alt="Logo El Ángel Azul" class="logo">
+            </a>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li class="dropdown">
+                    <span class="dropbtn">Productos</span>
+                    <div class="dropdown-content">
+                        <a href="velas.html">Velas</a>
+                        <a href="difusores.html">Difusores</a>
+                        <a href="perfuminas.html">Perfuminas</a>
+                    </div>
+                </li>
+                <li><a href="ubicacion.html">Ubicación</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="carrito.html">Carrito</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="carrito-container">
+            <h1>Mi Carrito</h1>
+            <div id="carrito-items"></div>
+            <p id="total">Total: $0</p>
+            <button id="vaciar-carrito" class="btn-agregar">Vaciar Carrito</button>
+
+            <!-- Formulario de finalización -->
+            <div class="finalizar-compra">
+                <h2>Finalizar Compra</h2>
+                <form id="form-compra">
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" required>
+
+                    <label for="correo">Correo electrónico:</label>
+                    <input type="email" id="correo" required>
+
+                    <label for="direccion">Dirección de envío:</label>
+                    <input type="text" id="direccion" required>
+
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" required>
+
+                    <label for="observaciones">Observaciones:</label>
+                    <textarea id="observaciones" rows="3"></textarea>
+
+                    <button type="submit" class="btn-agregar">Enviar Pedido</button>
+                </form>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 El Ángel Azul. Todos los derechos reservados.</p>
+        <div class="redes">
+            <a href="https://www.instagram.com/elangelazul_deco" target="_blank">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
+            </a>
+            <a href="https://wa.me/5491131791550" target="_blank">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp">
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        // -------------------- CARGAR CARRITO --------------------
+        function cargarCarrito() {
+            const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+            const contenedor = document.getElementById("carrito-items");
+            contenedor.innerHTML = "";
+            let total = 0;
+
+            carrito.forEach((producto, index) => {
+                total += producto.precio;
+                const item = document.createElement("div");
+                item.className = "carrito-item";
+                item.innerHTML = `
+          <p><strong>${producto.nombre}</strong> - ${producto.fragancia} (${producto.tamano})</p>
+          <p>Precio: $${producto.precio.toLocaleString("es-AR")}</p>
+          <button onclick="eliminarProducto(${index})" class="btn-agregar">Eliminar</button>
+        `;
+                contenedor.appendChild(item);
+            });
+
+            document.getElementById("total").textContent = `Total: $${total.toLocaleString("es-AR")}`;
+        }
+
+        function eliminarProducto(indice) {
+            let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+            carrito.splice(indice, 1);
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+            cargarCarrito();
+        }
+
+        document.getElementById("vaciar-carrito").addEventListener("click", () => {
+            localStorage.removeItem("carrito");
+            cargarCarrito();
+        });
+
+        // -------------------- FORMULARIO DE COMPRA --------------------
+        document.getElementById("form-compra").addEventListener("submit", function(e) {
+            e.preventDefault();
+            const nombre = document.getElementById("nombre").value;
+            const correo = document.getElementById("correo").value;
+            const direccion = document.getElementById("direccion").value;
+            const telefono = document.getElementById("telefono").value;
+            const observaciones = document.getElementById("observaciones").value;
+
+            const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+            if (carrito.length === 0) {
+                alert("El carrito está vacío. Agregá productos antes de enviar el pedido.");
+                return;
+            }
+
+            let resumen = `Pedido de ${nombre}:\nCorreo: ${correo}\nTel: ${telefono}\nDirección: ${direccion}\n\nProductos:\n`;
+            carrito.forEach(p => {
+                resumen += `- ${p.nombre} (${p.fragancia}, ${p.tamano}) - $${p.precio.toLocaleString("es-AR")}\n`;
+            });
+            const total = carrito.reduce((acc, p) => acc + p.precio, 0);
+            resumen += `\nTotal: $${total.toLocaleString("es-AR")}\n\nObservaciones: ${observaciones}`;
+
+            alert(resumen + "\n\n¡Gracias por tu compra!");
+            localStorage.removeItem("carrito"); // vaciar carrito al enviar
+            cargarCarrito();
+            this.reset();
+        });
+
+        document.addEventListener("DOMContentLoaded", cargarCarrito);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfuminas - El Ángel Azul</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- SÓCALO SUPERIOR -->
+    <header>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="logo.jpg" alt="Logo El Ángel Azul" class="logo">
+            </a>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li class="dropdown">
+                    <span class="dropbtn">Productos</span>
+                    <div class="dropdown-content">
+                        <a href="velas.html">Velas</a>
+                        <a href="difusores.html">Difusores</a>
+                        <a href="perfuminas.html">Perfuminas</a>
+                    </div>
+                </li>
+                <li><a href="ubicacion.html">Ubicación</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="carrito.html">Carrito</a></li>
+            </ul>
+        </nav>
+    </header>>
+
+    <!-- TÍTULO -->
+    <section class="titulo-seccion">
+        <h1>Perfuminas Artesanales</h1>
+        <p>Descubrí nuestras perfuminas de 250ml y 500ml, hechas con esencias naturales. Seis fragancias: vainilla, lavanda, jazmín, coco, canela y floral.</p>
+    </section>
+
+    <!-- SLIDER DE IMÁGENES -->
+    <section class="slider">
+        <button class="arrow left" onclick="moverSlider('izquierda')">&#10094;</button>
+        <div class="imagenes">
+            <img src="perfuminas4.jpg" alt="Perfumina 1" />
+            <img src="perfuminas5.jpg" alt="Perfumina 2" />
+            <img src="perfuminas6.jpg" alt="Perfumina 3" />
+            <img src="perfuminas7.jpg" alt="Perfumina 4" />
+            <img src="perfuminas8.jpg" alt="Perfumina 5" />
+            <img src="perfuminas9.jpg" alt="Perfumina 6" />
+        </div>
+        <button class="arrow right" onclick="moverSlider('derecha')">&#10095;</button>
+    </section>
+
+    <!-- PRODUCTO / CARRITO -->
+    <section class="producto-container">
+        <div class="producto-card">
+            <h2>Elegí tu perfumina</h2>
+            <label for="fragancia">Fragancia:</label>
+            <select id="fragancia">
+        <option value="vainilla">Vainilla</option>
+        <option value="lavanda">Lavanda</option>
+        <option value="jazmin">Jazmín</option>
+        <option value="coco">Coco</option>
+        <option value="canela">Canela</option>
+        <option value="floral">Floral</option>
+      </select>
+
+            <label for="tamano">Tamaño:</label>
+            <select id="tamano">
+        <option value="250ml" data-precio="8000">250ml ($8.000)</option>
+        <option value="500ml" data-precio="16000">500ml ($16.000)</option>
+      </select>
+
+            <button class="btn-agregar" onclick="agregarProducto('Perfumina')">Agregar al carrito</button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 El Ángel Azul. Todos los derechos reservados.</p>
+        <div class="redes">
+            <a href="https://www.instagram.com/elangelazul_deco" target="_blank">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
+            </a>
+            <a href="https://wa.me/5491131791550" target="_blank">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp">
+            </a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - El Ángel Azul</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER / MENÚ SUPERIOR ===== -->
+    <header>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="logo.jpg" alt="Logo El Ángel Azul" class="logo">
+            </a>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li class="dropdown">
+                    <span class="dropbtn">Productos</span>
+                    <div class="dropdown-content">
+                        <a href="velas.html">Velas</a>
+                        <a href="difusores.html">Difusores</a>
+                        <a href="perfuminas.html">Perfuminas</a>
+                    </div>
+                </li>
+                <li><a href="ubicacion.html">Ubicación</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="carrito.html">Carrito</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===== TEXTO MARKETING ===== -->
+    <section class="marketing">
+        <h2>Servicios de Eventos</h2>
+        <p>
+            En <strong>El Ángel Azul</strong> hacemos que tus celebraciones sean inolvidables. Nuestros centros de mesa, velas y perfuminas personalizadas son ideales para cumpleaños, casamientos, bautismos o cualquier evento especial. ¡Transformá tu
+            fiesta con estilo y aroma!
+        </p>
+    </section>
+
+    <!-- ===== FORMULARIO DE CONTACTO ===== -->
+    <section class="contacto">
+        <h2>Contacto</h2>
+        <form action="#" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <!-- ===== CALCULADORA INTERACTIVA ===== -->
+    <!-- ===== CALCULADORA INTERACTIVA ===== -->
+    <section class="calculadora">
+        <h2>Calculá tu pedido</h2>
+        <p>Seleccioná la cantidad de cada producto y servicio, y calculá el precio total.</p>
+
+        <form id="calcForm">
+            <div class="producto">
+                <label>Velas aromáticas pequeñas ($10.000 c/u):</label>
+                <input type="number" id="velaPeq" value="0" min="0">
+            </div>
+            <div class="producto">
+                <label>Velas aromáticas grandes ($20.000 c/u):</label>
+                <input type="number" id="velaGr" value="0" min="0">
+            </div>
+            <div class="producto">
+                <label>Perfuminas 250ml ($8000 c/u):</label>
+                <input type="number" id="perf250" value="0" min="0">
+            </div>
+            <div class="producto">
+                <label>Perfuminas 500ml ($16.000 c/u):</label>
+                <input type="number" id="perf500" value="0" min="0">
+            </div>
+            <div class="producto">
+                <label>Difusores chicos ($5000 c/u):</label>
+                <input type="number" id="difCh" value="0" min="0">
+            </div>
+            <div class="producto">
+                <label>Difusores grandes ($10.000 c/u):</label>
+                <input type="number" id="difGr" value="0" min="0">
+            </div>
+            <!-- NUEVOS SERVICIOS DE EVENTOS -->
+            <div class="producto">
+                <label>Servicio de eventos básico ($150.000):</label>
+                <input type="number" id="servBasico" value="0" min="0">
+            </div>
+            <div class="producto">
+                <label>Servicio de eventos extra ($350.000):</label>
+                <input type="number" id="servExtra" value="0" min="0">
+            </div>
+            <div class="producto">
+                <label>Servicio de evento completo ($650.000):</label>
+                <input type="number" id="servCompleto" value="0" min="0">
+            </div>
+
+            <button type="button" onclick="calcularTotal()">Calcular total</button>
+        </form>
+
+        <p id="resultado" style="margin-top:15px; font-weight:bold;"></p>
+    </section>
+
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>© 2025 El Ángel Azul. Todos los derechos reservados.</p>
+        <div class="redes">
+            <a href="https://www.instagram.com/elangelazul_deco" target="_blank">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
+            </a>
+            <a href="https://wa.me/5491131791550" target="_blank">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp">
+            </a>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT CALCULADORA ===== -->
+    <script>
+        function calcularTotal() {
+            const velaPeq = parseInt(document.getElementById('velaPeq').value) || 0;
+            const velaGr = parseInt(document.getElementById('velaGr').value) || 0;
+            const perf250 = parseInt(document.getElementById('perf250').value) || 0;
+            const perf500 = parseInt(document.getElementById('perf500').value) || 0;
+            const difCh = parseInt(document.getElementById('difCh').value) || 0;
+            const difGr = parseInt(document.getElementById('difGr').value) || 0;
+            const servBasico = parseInt(document.getElementById('servBasico').value) || 0;
+            const servExtra = parseInt(document.getElementById('servExtra').value) || 0;
+            const servCompleto = parseInt(document.getElementById('servCompleto').value) || 0;
+
+            const total =
+                (velaPeq * 10000) +
+                (velaGr * 20000) +
+                (perf250 * 8000) +
+                (perf500 * 16000) +
+                (difCh * 5000) +
+                (difGr * 10000) +
+                (servBasico * 150000) +
+                (servExtra * 350000) +
+                (servCompleto * 650000);
+
+            document.getElementById('resultado').innerText = `Total estimado: $${total.toLocaleString('es-AR')}`;
+        }
+    </script>
+
+
+</body>
+
+</html>

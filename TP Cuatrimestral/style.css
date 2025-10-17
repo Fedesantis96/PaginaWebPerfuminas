@@ -1,0 +1,842 @@
+/* ==== ESTILOS GENERALES ==== */
+
+body {
+    margin: 0;
+    font-family: "Poppins", Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+
+/* ==== HEADER ==== */
+
+
+/* HEADER */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* logo a la izquierda, menú a la derecha */
+    padding: 0 20px;
+    height: 80px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Logo natural a la izquierda */
+
+.logo-container {
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-container .logo {
+    height: 60px;
+    /* fija la altura */
+    width: auto;
+    /* mantiene proporción */
+}
+
+
+/* Menú horizontal */
+
+nav .menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 30px;
+    font-family: 'Arial', sans-serif;
+    /* misma tipografía que formularios */
+    font-weight: bold;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu a,
+.menu .dropbtn {
+    text-decoration: none;
+    color: #000;
+    padding: 20px 10px;
+    display: flex;
+    /* permite alinear emoji con texto */
+    align-items: center;
+    gap: 5px;
+    /* espacio entre emoji y texto */
+    cursor: pointer;
+    font-family: inherit;
+}
+
+
+/* Hover menu */
+
+.menu a:hover,
+.menu .dropbtn:hover {
+    color: #555;
+}
+
+
+/* Dropdown */
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 150px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.dropdown-content a {
+    padding: 10px 15px;
+    display: block;
+    color: #000;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* ==== NAVBAR ==== */
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+    position: relative;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #666;
+}
+
+
+/* ==== MENÚ DESPLEGABLE ==== */
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    top: 30px;
+    left: 0;
+    min-width: 160px;
+    z-index: 10;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px 15px;
+    color: #000;
+}
+
+.dropdown-content a:hover {
+    background-color: #f2f2f2;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* ==== TÍTULO PRINCIPAL ==== */
+
+.titulo {
+    text-align: center;
+    background-color: #e6e6e6;
+    padding: 40px 20px;
+    margin-top: 0;
+}
+
+.titulo h1 {
+    font-size: 2.8em;
+    color: #000;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+
+/* ==== GALERÍA ==== */
+
+.galeria {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+}
+
+.galeria img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.galeria img:hover {
+    transform: scale(1.05);
+}
+
+
+/* ==== FORMULARIO CONTACTO ==== */
+
+.contacto {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.contacto h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.contacto form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contacto label {
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.contacto input,
+.contacto textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 15px;
+    resize: none;
+}
+
+.contacto button {
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: "Poppins", Arial, sans-serif;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.contacto button:hover {
+    background-color: #333;
+}
+
+
+/* ==== FOOTER ==== */
+
+footer {
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 25px 10px;
+    margin-top: 40px;
+}
+
+footer .redes {
+    margin-top: 10px;
+}
+
+footer .redes a {
+    margin: 0 10px;
+}
+
+footer .redes img {
+    width: 28px;
+    height: 28px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.2s;
+}
+
+footer .redes img:hover {
+    transform: scale(1.2);
+}
+
+
+/* ==== CORRECCIÓN DEL MENÚ DESPLEGABLE ==== */
+
+header {
+    position: relative;
+    z-index: 1000;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    z-index: 9999;
+    /* asegura que quede encima de todo */
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+}
+
+.dropdown-content a {
+    padding: 10px 15px;
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.dropdown-content a:hover {
+    background-color: #f5f5f5;
+}
+
+
+/* ==== ICONOS FOOTER CON FONDO NEGRO ==== */
+
+footer .redes img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    margin: 0 10px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+footer .redes img:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+
+/* ==== SECCIONES QUIÉNES SOMOS / UBICACIÓN / HORARIOS ==== */
+
+.quienes-somos,
+.ubicacion,
+.horarios {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.quienes-somos p,
+.ubicacion p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.mapa-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.mapa-container iframe {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    border: 0;
+    border-radius: 15px;
+}
+
+
+/* ==== ESTILO CALCULADORA ==== */
+
+.calculadora {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    border: 2px solid #000;
+    /* borde del recuadro */
+    border-radius: 15px;
+    background-color: #f9f9f9;
+    /* fondo suave para diferenciar */
+    text-align: center;
+}
+
+.calculadora h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.calculadora p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.calculadora .producto {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calculadora .producto label {
+    flex: 1;
+    text-align: left;
+    font-weight: 500;
+}
+
+.calculadora .producto input {
+    width: 100px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #000;
+    font-size: 1em;
+    text-align: center;
+}
+
+.calculadora button {
+    margin-top: 20px;
+    padding: 10px 25px;
+    background-color: #000;
+    /* mismo que formulario */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.calculadora button:hover {
+    background-color: #333;
+    transform: scale(1.05);
+}
+
+#resultado {
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #000;
+}
+
+
+/* ===== HERO ===== */
+
+.hero {
+    max-width: 1200px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero .subtitulo {
+    font-size: 1.3em;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+
+
+/* ===== GALERÍA DE PRODUCTOS ===== */
+
+.productos-preview {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto 50px auto;
+}
+
+.producto-item {
+    text-align: center;
+    width: 300px;
+    margin-bottom: 30px;
+}
+
+.producto-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.producto-item h3 {
+    margin: 10px 0 5px 0;
+    font-size: 1.5em;
+}
+
+.producto-item p {
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.producto-item .btn-ver-mas {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.producto-item .btn-ver-mas:hover {
+    background-color: #333;
+    transform: scale(1.05);
+}
+
+
+/* --- PÁGINA DE PRODUCTO --- */
+
+.producto-page {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.producto-descripcion {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+}
+
+.slider-container {
+    position: relative;
+    width: 70%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider img {
+    width: 50%;
+    border-radius: 10px;
+    margin: 0 5px;
+}
+
+.arrow {
+    position: absolute;
+    top: 45%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.arrow.left {
+    left: 0;
+}
+
+.arrow.right {
+    right: 0;
+}
+
+.agregar-carrito {
+    margin-top: 25px;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.agregar-carrito:hover {
+    background-color: #333;
+}
+
+
+/* --- SLIDER --- */
+
+.slider-container {
+    position: relative;
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider img {
+    width: 45%;
+    height: auto;
+    border-radius: 12px;
+    margin: 0 10px;
+    object-fit: cover;
+}
+
+.arrow {
+    position: absolute;
+    top: 45%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    font-size: 26px;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+
+.arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.arrow.left {
+    left: 10px;
+}
+
+.arrow.right {
+    right: 10px;
+}
+
+
+/* ----- SECCIÓN VELAS ----- */
+
+.titulo-seccion {
+    text-align: center;
+    margin-top: 120px;
+    padding: 0 20px;
+}
+
+.titulo-seccion h1 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.titulo-seccion p {
+    font-size: 1.1em;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+
+/* ----- SLIDER ----- */
+
+.slider {
+    position: relative;
+    width: 80%;
+    margin: 40px auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider .imagenes {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slider img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 0 10px;
+}
+
+.arrow {
+    background: none;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    padding: 10px;
+}
+
+
+/* ----- PRODUCTO / CARRITO ----- */
+
+.producto-container {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.producto-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    padding: 30px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.producto-card select {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0 20px;
+    font-size: 1em;
+}
+
+.btn-agregar {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: inherit;
+    transition: background 0.3s ease;
+}
+
+.btn-agregar:hover {
+    background-color: #333;
+}
+
+
+/* ----- FOOTER ----- */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    margin-top: 50px;
+}
+
+.footer-icons {
+    margin-bottom: 10px;
+}
+
+.footer-icons img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    filter: brightness(0);
+    transition: transform 0.2s ease;
+}
+
+.footer-icons img:hover {
+    transform: scale(1.1);
+}
+
+
+/* Sección carrito */
+
+.carrito-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    background-color: #fefefe;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+
+/* Productos listados */
+
+.carrito-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.carrito-item:last-child {
+    border-bottom: none;
+}
+
+
+/* Formulario dentro del carrito */
+
+.carrito-form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.carrito-form input,
+.carrito-form select,
+.carrito-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+.carrito-form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+
+/* Botón de enviar/calcular */
+
+.carrito-form button {
+    padding: 12px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.carrito-form button:hover {
+    background-color: #333;
+}
