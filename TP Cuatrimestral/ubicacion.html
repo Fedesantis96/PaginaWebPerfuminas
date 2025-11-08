@@ -30,10 +30,21 @@
                 </li>
                 <li><a href="ubicacion.html">Ubicación</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="carrito.html">Carrito</a></li>
+                <li>
+                    <a href="carrito.html" class="carrito-link">
+    🛒 Carrito <span id="cart-count">0</span>
+  </a>
+                </li>
+
+                <li>
+                    <!-- botón modo oscuro (poner en el header de todas las páginas) -->
+                    <button id="modo-oscuro-toggle" class="modo-oscuro-btn" aria-label="Toggle modo oscuro">🌙</button>
+
+                </li>
             </ul>
         </nav>
     </header>
+
 
     <!-- ===== QUIÉNES SOMOS ===== -->
     <section class="quienes-somos">
@@ -63,7 +74,8 @@
             <li>Domingos y feriados: Cerrado</li>
         </ul>
     </section>
-
+    <!-- BOTÓN VOLVER ARRIBA -->
+    <button id="btn-volver-arriba" title="Volver arriba">⬆️</button>
     <!-- ===== FOOTER ===== -->
     <footer>
         <p>© 2025 El Ángel Azul. Todos los derechos reservados.</p>
@@ -76,6 +88,7 @@
             </a>
         </div>
     </footer>
+    <script src="script.js"></script>
 
 </body>
 

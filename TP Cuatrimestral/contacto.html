@@ -30,13 +30,21 @@
                 </li>
                 <li><a href="ubicacion.html">Ubicación</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="carrito.html">Carrito</a></li>
+                <li>
+                    <a href="carrito.html" class="carrito-link">
+            🛒 Carrito <span id="cart-count">0</span>
+          </a>
+                </li>
+                <li>
+                    <!-- botón modo oscuro -->
+                    <button id="modo-oscuro-toggle" class="modo-oscuro-btn" aria-label="Cambiar modo oscuro">🌙</button>
+                </li>
             </ul>
         </nav>
     </header>
 
     <!-- ===== TEXTO MARKETING ===== -->
-    <section class="marketing">
+    <section class="marketing" style="text-align: center; max-width: 800px; margin: 50px auto; line-height: 1.6;">
         <h2>Servicios de Eventos</h2>
         <p>
             En <strong>El Ángel Azul</strong> hacemos que tus celebraciones sean inolvidables. Nuestros centros de mesa, velas y perfuminas personalizadas son ideales para cumpleaños, casamientos, bautismos o cualquier evento especial. ¡Transformá tu
@@ -62,7 +70,6 @@
     </section>
 
     <!-- ===== CALCULADORA INTERACTIVA ===== -->
-    <!-- ===== CALCULADORA INTERACTIVA ===== -->
     <section class="calculadora">
         <h2>Calculá tu pedido</h2>
         <p>Seleccioná la cantidad de cada producto y servicio, y calculá el precio total.</p>
@@ -77,7 +84,7 @@
                 <input type="number" id="velaGr" value="0" min="0">
             </div>
             <div class="producto">
-                <label>Perfuminas 250ml ($8000 c/u):</label>
+                <label>Perfuminas 250ml ($8.000 c/u):</label>
                 <input type="number" id="perf250" value="0" min="0">
             </div>
             <div class="producto">
@@ -85,7 +92,7 @@
                 <input type="number" id="perf500" value="0" min="0">
             </div>
             <div class="producto">
-                <label>Difusores chicos ($5000 c/u):</label>
+                <label>Difusores chicos ($5.000 c/u):</label>
                 <input type="number" id="difCh" value="0" min="0">
             </div>
             <div class="producto">
@@ -112,8 +119,24 @@
         <p id="resultado" style="margin-top:15px; font-weight:bold;"></p>
     </section>
 
+    <!-- ===== PREGUNTAS FRECUENTES ===== -->
+    <section class="faq" style="max-width: 900px; margin: 60px auto; text-align: left; line-height: 1.6;">
+        <h2 style="text-align: center; margin-bottom: 25px;">Preguntas Frecuentes</h2>
 
-    <!-- ===== FOOTER ===== -->
+        <h3>1. ¿Puedo personalizar las velas o difusores con mi nombre o logo?</h3>
+        <p>Sí, ofrecemos personalización completa para eventos o regalos corporativos. Podés elegir etiquetas, colores y fragancias.</p>
+
+        <h3>2. ¿Con cuánta anticipación debo hacer un pedido grande?</h3>
+        <p>Recomendamos realizar el pedido al menos con 15 días de anticipación para asegurar disponibilidad y una producción artesanal cuidada.</p>
+
+        <h3>3. ¿Realizan envíos a todo el país?</h3>
+        <p>Sí, trabajamos con diferentes empresas de logística y hacemos envíos a todo el territorio argentino.</p>
+    </section>
+
+    <!-- BOTÓN VOLVER ARRIBA -->
+    <button id="btn-volver-arriba" title="Volver arriba">⬆️</button>
+
+    <!-- FOOTER -->
     <footer>
         <p>© 2025 El Ángel Azul. Todos los derechos reservados.</p>
         <div class="redes">
@@ -126,35 +149,8 @@
         </div>
     </footer>
 
-    <!-- ===== JAVASCRIPT CALCULADORA ===== -->
-    <script>
-        function calcularTotal() {
-            const velaPeq = parseInt(document.getElementById('velaPeq').value) || 0;
-            const velaGr = parseInt(document.getElementById('velaGr').value) || 0;
-            const perf250 = parseInt(document.getElementById('perf250').value) || 0;
-            const perf500 = parseInt(document.getElementById('perf500').value) || 0;
-            const difCh = parseInt(document.getElementById('difCh').value) || 0;
-            const difGr = parseInt(document.getElementById('difGr').value) || 0;
-            const servBasico = parseInt(document.getElementById('servBasico').value) || 0;
-            const servExtra = parseInt(document.getElementById('servExtra').value) || 0;
-            const servCompleto = parseInt(document.getElementById('servCompleto').value) || 0;
-
-            const total =
-                (velaPeq * 10000) +
-                (velaGr * 20000) +
-                (perf250 * 8000) +
-                (perf500 * 16000) +
-                (difCh * 5000) +
-                (difGr * 10000) +
-                (servBasico * 150000) +
-                (servExtra * 350000) +
-                (servCompleto * 650000);
-
-            document.getElementById('resultado').innerText = `Total estimado: $${total.toLocaleString('es-AR')}`;
-        }
-    </script>
-
-
+    <!-- 🚀 El script siempre va al final -->
+    <script src="script.js"></script>
 </body>
 
 </html>
