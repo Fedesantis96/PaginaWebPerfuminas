@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubicación - El Ángel Azul</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER / MENÚ SUPERIOR ===== -->
+    <header>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="logo.jpg" alt="Logo El Ángel Azul" class="logo">
+            </a>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li class="dropdown">
+                    <span class="dropbtn">Productos</span>
+                    <div class="dropdown-content">
+                        <a href="velas.html">Velas</a>
+                        <a href="difusores.html">Difusores</a>
+                        <a href="perfuminas.html">Perfuminas</a>
+                    </div>
+                </li>
+                <li><a href="ubicacion.html">Ubicación</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li>
+                    <a href="carrito.html" class="carrito-link">
+    🛒 Carrito <span id="cart-count">0</span>
+  </a>
+                </li>
+
+                <li>
+                    <!-- botón modo oscuro (poner en el header de todas las páginas) -->
+                    <button id="modo-oscuro-toggle" class="modo-oscuro-btn" aria-label="Toggle modo oscuro">🌙</button>
+
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- ===== QUIÉNES SOMOS ===== -->
+    <section class="quienes-somos">
+        <h2>¿Quiénes somos?</h2>
+        <p>
+            En <strong>El Ángel Azul</strong> nos apasiona crear experiencias únicas para tu hogar. Nuestras perfuminas, velas y difusores combinan aromas delicados con diseños elegantes, pensados para llenar de calidez y armonía cada espacio.
+        </p>
+    </section>
+
+    <!-- ===== UBICACIÓN / MAPA ===== -->
+    <section class="ubicacion">
+        <h2>Nuestra ubicación</h2>
+        <p>Nos encontramos en el corazón de Palermo, cerca de Plaza Serrano. ¡Ven a visitarnos!</p>
+        <div class="mapa-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.814309336492!2d-58.43329722439139!3d-34.58655025689521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb59a9f6b10d3%3A0x8e50a4dd9ee8f22!2sPlaza%20Serrano!5e0!3m2!1ses-419!2sar!4v1698515998257!5m2!1ses-419!2sar"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- ===== HORARIOS DE ATENCIÓN ===== -->
+    <section class="horarios">
+        <h2>Horarios de atención</h2>
+        <ul>
+            <li>Lunes a Viernes: 10:00 - 19:00</li>
+            <li>Sábados: 11:00 - 17:00</li>
+            <li>Domingos y feriados: Cerrado</li>
+        </ul>
+    </section>
+    <!-- BOTÓN VOLVER ARRIBA -->
+    <button id="btn-volver-arriba" title="Volver arriba">⬆️</button>
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>© 2025 El Ángel Azul. Todos los derechos reservados.</p>
+        <div class="redes">
+            <a href="https://www.instagram.com/elangelazul_deco" target="_blank">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
+            </a>
+            <a href="https://wa.me/5491131791550" target="_blank">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp">
+            </a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
